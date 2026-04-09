@@ -433,8 +433,21 @@
         /* ──────────────────────── SKILLS ──────────────────────── */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem 2rem;
+        }
+
+        .skills-grid .skill-group:nth-child(1) { grid-column: 1 / span 2; }
+        .skills-grid .skill-group:nth-child(2) { grid-column: 3 / span 2; }
+        .skills-grid .skill-group:nth-child(3) { grid-column: 5 / span 2; }
+        .skills-grid .skill-group:nth-child(4) { grid-column: 2 / span 2; }
+        .skills-grid .skill-group:nth-child(5) { grid-column: 4 / span 2; }
+
+        @media (max-width: 700px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid .skill-group:nth-child(n) { grid-column: 1; }
         }
 
 
@@ -455,15 +468,10 @@
             gap: 0.4rem;
         }
 
-        .skill-pill {
-            font-size: 0.8rem;
-            font-weight: 500;
-            padding: 0.3rem 0.7rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            color: var(--text);
-            white-space: nowrap;
+        .skill-badge {
+            height: 22px;
+            border-radius: 3px;
+            display: block;
         }
 
         /* ──────────────────────── EXPERIENCE ──────────────────────── */
@@ -831,54 +839,54 @@
                     <div class="skill-group">
                         <p class="skill-group-title">Languages</p>
                         <div class="skill-pills">
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">JavaScript</span>
-                            <span class="skill-pill">SQL</span>
-                            <span class="skill-pill">C</span>
-                            <span class="skill-pill">HTML5</span>
-                            <span class="skill-pill">CSS3</span>
-                            <span class="skill-pill">Bash</span>
+                            <img class="skill-badge" src="https://img.shields.io/badge/Python-4d9bf5?style=flat-square&logo=python&logoColor=fff" alt="Python">
+                            <img class="skill-badge" src="https://img.shields.io/badge/JavaScript-4d9bf5?style=flat-square&logo=javascript&logoColor=fff" alt="JavaScript">
+                            <img class="skill-badge" src="https://img.shields.io/badge/C-4d9bf5?style=flat-square&logo=c&logoColor=fff" alt="C">
+                            <img class="skill-badge" src="https://img.shields.io/badge/SQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff" alt="SQL">
+                            <img class="skill-badge" src="https://img.shields.io/badge/HTML5-4d9bf5?style=flat-square&logo=html5&logoColor=fff" alt="HTML5">
+                            <img class="skill-badge" src="https://img.shields.io/badge/CSS3-4d9bf5?style=flat-square&logo=css3&logoColor=fff" alt="CSS3">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Bash-4d9bf5?style=flat-square&logo=gnubash&logoColor=fff" alt="Bash">
                         </div>
                     </div>
                     <div class="skill-group">
-                        <p class="skill-group-title">Frameworks</p>
+                        <p class="skill-group-title">Frameworks, Libraries & Tools</p>
                         <div class="skill-pills">
-                            <span class="skill-pill">React</span>
-                            <span class="skill-pill">Flask</span>
-                            <span class="skill-pill">Express</span>
-                            <span class="skill-pill">Node.js</span>
-                            <span class="skill-pill">Vite</span>
-                            <span class="skill-pill">SQLAlchemy</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <p class="skill-group-title">Cloud & DevOps</p>
-                        <div class="skill-pills">
-                            <span class="skill-pill">AWS</span>
-                            <span class="skill-pill">Azure</span>
-                            <span class="skill-pill">Docker</span>
-                            <span class="skill-pill">Terraform</span>
-                            <span class="skill-pill">GitHub Actions</span>
-                            <span class="skill-pill">Linux</span>
-                            <span class="skill-pill">Git</span>
+                            <img class="skill-badge" src="https://img.shields.io/badge/React-4d9bf5?style=flat-square&logo=react&logoColor=fff" alt="React">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Flask-4d9bf5?style=flat-square&logo=flask&logoColor=fff" alt="Flask">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Express-4d9bf5?style=flat-square&logo=express&logoColor=fff" alt="Express">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Node.js-4d9bf5?style=flat-square&logo=node.js&logoColor=fff" alt="Node.js">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Vite-4d9bf5?style=flat-square&logo=vite&logoColor=fff" alt="Vite">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Vitest-4d9bf5?style=flat-square&logo=vitest&logoColor=fff" alt="Vitest">
+                            <img class="skill-badge" src="https://img.shields.io/badge/SQLAlchemy-4d9bf5?style=flat-square&logo=python&logoColor=fff" alt="SQLAlchemy">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Postman-4d9bf5?style=flat-square&logo=postman&logoColor=fff" alt="Postman">
                         </div>
                     </div>
                     <div class="skill-group">
                         <p class="skill-group-title">Data & BI</p>
                         <div class="skill-pills">
-                            <span class="skill-pill">Power BI</span>
-                            <span class="skill-pill">PostgreSQL</span>
-                            <span class="skill-pill">Google Analytics</span>
-                            <span class="skill-pill">Looker Studio</span>
+                            <img class="skill-badge" src="https://img.shields.io/badge/Power_BI-4d9bf5?style=flat-square&logo=powerbi&logoColor=fff" alt="Power BI">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Google_Analytics-4d9bf5?style=flat-square&logo=googleanalytics&logoColor=fff" alt="Google Analytics">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Looker_Studio-4d9bf5?style=flat-square&logo=looker&logoColor=fff" alt="Looker Studio">
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <p class="skill-group-title">Cloud & DevOps</p>
+                        <div class="skill-pills">
+                            <img class="skill-badge" src="https://img.shields.io/badge/AWS-4d9bf5?style=flat-square&logo=amazonaws&logoColor=fff" alt="AWS">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Azure-4d9bf5?style=flat-square&logo=microsoftazure&logoColor=fff" alt="Azure">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Terraform-4d9bf5?style=flat-square&logo=terraform&logoColor=fff" alt="Terraform">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Docker-4d9bf5?style=flat-square&logo=docker&logoColor=fff" alt="Docker">
+                            <img class="skill-badge" src="https://img.shields.io/badge/PostgreSQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff" alt="PostgreSQL">
+                            <img class="skill-badge" src="https://img.shields.io/badge/GitHub_Actions-4d9bf5?style=flat-square&logo=githubactions&logoColor=fff" alt="GitHub Actions">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Git-4d9bf5?style=flat-square&logo=git&logoColor=fff" alt="Git">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Linux-4d9bf5?style=flat-square&logo=linux&logoColor=fff" alt="Linux">
                         </div>
                     </div>
                     <div class="skill-group">
                         <p class="skill-group-title">Collaboration</p>
                         <div class="skill-pills">
-                            <span class="skill-pill">Confluence</span>
-                            <span class="skill-pill">Jira</span>
-                            <span class="skill-pill">Postman</span>
-                            <span class="skill-pill">Microsoft Teams</span>
+                            <img class="skill-badge" src="https://img.shields.io/badge/Confluence-4d9bf5?style=flat-square&logo=confluence&logoColor=fff" alt="Confluence">
+                            <img class="skill-badge" src="https://img.shields.io/badge/Jira-4d9bf5?style=flat-square&logo=jira&logoColor=fff" alt="Jira">
                         </div>
                     </div>
                 </div>
@@ -1060,11 +1068,11 @@
             skills: () => [
                 { cls: 't-comment', text: '# tech stack' },
                 { cls: '', text: '' },
-                { cls: '', text: '  <span class="t-key">Languages</span>   Python, JavaScript, SQL, C, Bash' },
-                { cls: '', text: '  <span class="t-key">Frontend</span>    React, HTML5, CSS3, Vite' },
-                { cls: '', text: '  <span class="t-key">Backend</span>     Flask, Express, Node.js, SQLAlchemy' },
-                { cls: '', text: '  <span class="t-key">Cloud</span>       AWS, Azure, Terraform, GitHub Actions' },
-                { cls: '', text: '  <span class="t-key">Data</span>        Power BI, PostgreSQL, Looker Studio' },
+                { cls: '', text: '  <span class="t-key">Languages</span>   Python, JavaScript, C, SQL, HTML5, CSS3, Bash' },
+                { cls: '', text: '  <span class="t-key">Frameworks</span>  React, Flask, Express, Node.js, Vite, Vitest, SQLAlchemy, Postman' },
+                { cls: '', text: '  <span class="t-key">Data</span>        Power BI, Google Analytics, Looker Studio' },
+                { cls: '', text: '  <span class="t-key">Cloud</span>       AWS, Azure, Terraform, Docker, PostgreSQL, GitHub Actions, Git, Linux' },
+                { cls: '', text: '  <span class="t-key">Collab</span>      Confluence, Jira' },
                 { cls: '', text: '' },
             ],
             contact: () => [
