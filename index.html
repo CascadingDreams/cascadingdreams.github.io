@@ -7,6 +7,7 @@
     <title>Samantha Hill — Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23111'/><text x='3' y='24' font-family='monospace' font-size='19' fill='%234d9bf5'>%3E_</text></svg>">
     <style>
         :root {
             --bg: #1b1b1b;
@@ -31,6 +32,17 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+
+        /* ── Scroll progress bar ── */
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            width: 0%;
+            background: var(--accent);
+            z-index: 200;
+            transition: width 0.08s linear;
+        }
 
         body {
             font-family: var(--font);
@@ -86,7 +98,8 @@
             transition: color 0.15s, border-color 0.15s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--dark-text);
             border-bottom-color: var(--accent);
         }
@@ -166,6 +179,37 @@
             flex-wrap: wrap;
         }
 
+        .hero-activity {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.1rem;
+            font-size: 0.8rem;
+            color: var(--dark-muted);
+            font-family: var(--mono);
+        }
+
+        .activity-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+            animation: actpulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes actpulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
+        }
+
+        .activity-repo {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .activity-repo:hover { text-decoration: underline; }
+
         .btn {
             font-size: 0.875rem;
             font-weight: 500;
@@ -196,30 +240,6 @@
             border-color: rgba(255,255,255,0.4);
         }
 
-        .hero-meta {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--dark-border);
-            display: flex;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
-
-        .hero-meta-label {
-            font-family: var(--mono);
-            font-size: 0.68rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--dark-muted);
-        }
-
-        .hero-meta-value {
-            font-size: 0.88rem;
-            color: var(--dark-text);
-            font-weight: 500;
-        }
 
         /* ──────────────────────── TERMINAL ──────────────────────── */
         .terminal-wrapper {
@@ -275,6 +295,7 @@
         .t-prompt { color: #7ee787; }
         .t-cmd { color: #e6edf3; }
         .t-comment { color: rgba(230,237,243,0.4); }
+        .t-muted { color: rgba(230,237,243,0.35); }
         .t-key { color: #79c0ff; }
         .t-val { color: #e6edf3; }
         .t-tag { color: #7ee787; }
@@ -696,6 +717,8 @@
 
 <body>
 
+    <div id="scroll-progress"></div>
+
     <!-- NAV -->
     <nav>
         <a href="#hero" class="nav-logo">Samantha Hill <span>//</span></a>
@@ -719,19 +742,10 @@
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-ghost">Get in Touch</a>
                 </div>
-                <div class="hero-meta">
-                    <div class="hero-meta-item">
-                        <span class="hero-meta-label">Current Role</span>
-                        <span class="hero-meta-value">ICT Engineer, Australian Government</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <span class="hero-meta-label">Education</span>
-                        <span class="hero-meta-value">Holberton School, 2024–25</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <span class="hero-meta-label">Clearance</span>
-                        <span class="hero-meta-value">NV1 Active</span>
-                    </div>
+                <div class="hero-activity" id="hero-activity">
+                    <span class="activity-dot"></span>
+                    <span>currently working on</span>
+                    <a class="activity-repo" id="activity-repo" href="#" target="_blank"></a>
                 </div>
             </div>
 
@@ -1002,7 +1016,7 @@
             <h2 class="section-title fade-in">Get in Touch</h2>
             <p class="contact-desc fade-in">Open to full-stack engineering roles in Melbourne. Holds an NV1 security clearance.</p>
             <div class="contact-links fade-in">
-                <a href="mailto:contact@samanthahill.dev" class="btn btn-contact-primary">contact@samanthahill.dev</a>
+                <a href="mailto:contact@samanthahill.dev" class="btn btn-contact-primary" id="copy-email-btn" onclick="copyEmail(event)"><span id="copy-email-text">contact@samanthahill.dev</span></a>
                 <a href="https://github.com/CascadingDreams" target="_blank" class="btn btn-contact-ghost">GitHub</a>
                 <a href="https://www.linkedin.com/in/sammy-hill-173078142/" target="_blank" class="btn btn-contact-ghost">LinkedIn</a>
             </div>
@@ -1040,7 +1054,9 @@
                 { cls: '', text: '  <span class="t-key">ls</span>        list projects' },
                 { cls: '', text: '  <span class="t-key">skills</span>    tech stack' },
                 { cls: '', text: '  <span class="t-key">contact</span>   get in touch' },
+                { cls: '', text: '  <span class="t-key">open</span> <span class="t-val">[project]</span>   open on GitHub' },
                 { cls: '', text: '  <span class="t-key">clear</span>     clear terminal' },
+                { cls: '', text: '  <span class="t-key">surprise</span>  (◕‿◕)' },
                 { cls: '', text: '' },
             ],
             whoami: () => [
@@ -1048,9 +1064,6 @@
                 { cls: 't-comment', text: '# Full-stack software engineer' },
                 { cls: '', text: '' },
                 { cls: '', text: '  <span class="t-key">Location</span>   Melbourne, AU' },
-                { cls: '', text: '  <span class="t-key">Role</span>       ICT Engineer, Australian Government' },
-                { cls: '', text: '  <span class="t-key">Education</span>  Holberton School, 2024–25' },
-                { cls: '', text: '  <span class="t-key">Clearance</span>  NV1 Active' },
                 { cls: '', text: '' },
             ],
             ls: () => [
@@ -1083,8 +1096,32 @@
                 { cls: '', text: '  <span class="t-key">linkedin</span> <a class="t-link" href="https://www.linkedin.com/in/sammy-hill-173078142/" target="_blank">linkedin.com/in/sammy-hill</a>' },
                 { cls: '', text: '' },
             ],
-            clear: () => null // special case
+            clear: () => null, // special case
+            surprise: () => {
+                const kaomoji = [
+                    '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '(づ｡◕‿‿◕｡)づ', '٩(◕‿◕｡)۶',
+                    '(ง •̀_•́)ง', '(っ˘ω˘ς )', 'ʕ•ᴥ•ʔ', '(ᵔᴥᵔ)',
+                    '¯\\_(ツ)_/¯', '(╯°□°）╯︵ ┻━┻', '┬─┬ノ( º _ ºノ)',
+                    '(◡‿◡✿)', '(｡♥‿♥｡)', 'ヽ(・∀・)ﾉ', '(ﾟヮﾟ)',
+                    '(≧◡≦)', '(*≧ω≦)', '(●´ω｀●)', 'UwU',
+                    '(¬‿¬)', '( ͡° ͜ʖ ͡°)', '(งツ)ว', '＼(≧▽≦)／',
+                    '(҂◡_◡)', '(•̀ᴗ•́)و', '(ᗒᗨᗕ)', 'ᕙ(⇀‸↼‶)ᕗ',
+                ];
+                const pick = kaomoji[Math.floor(Math.random() * kaomoji.length)];
+                return [
+                    { cls: '', text: '' },
+                    { cls: 't-val', text: '  ' + pick },
+                    { cls: '', text: '' },
+                    { cls: 't-comment', text: '# another one? (y/n)' },
+                    { cls: '', text: '' },
+                ];
+            }
         };
+
+        let awaitingAnotherKaomoji = false;
+        let userHasInteracted = false;
+        let cmdHistory = [];
+        let historyIdx = -1;
 
         function appendLines(lines) {
             lines.forEach(line => {
@@ -1107,8 +1144,18 @@
             return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
 
+        const PROJECTS = {
+            'aws-health-monitor':      'https://github.com/CascadingDreams/aws-health-monitor',
+            'streamtracker':           'https://github.com/CascadingDreams/Simple-tv-and-movie-tracker',
+            'vic-mortgage-calculator': 'https://github.com/CascadingDreams/vic-home-calculator',
+            'gcm-tool':                'https://github.com/CascadingDreams/gcm-tool',
+            'gcm':                     'https://github.com/CascadingDreams/gcm-tool',
+            'simple-shell':            'https://github.com/CascadingDreams/simple-custom-shell',
+        };
+
         function runCommand(cmd) {
             const trimmed = cmd.trim().toLowerCase();
+            userHasInteracted = true;
             appendCommand(cmd.trim());
 
             if (!trimmed) {
@@ -1116,13 +1163,53 @@
                 return;
             }
 
+            if (awaitingAnotherKaomoji) {
+                awaitingAnotherKaomoji = false;
+                if (trimmed === 'y' || trimmed === 'yes') {
+                    awaitingAnotherKaomoji = true;
+                    appendLines(COMMANDS.surprise());
+                } else {
+                    appendLines([
+                        { cls: 't-comment', text: '# okay! (´｡• ᵕ •｡`)' },
+                        { cls: '', text: '' },
+                    ]);
+                }
+                return;
+            }
+
             if (trimmed === 'clear') {
                 output.innerHTML = '';
+                appendLines(COMMANDS.help());
+                return;
+            }
+
+            if (trimmed.startsWith('open')) {
+                const arg = trimmed.slice(4).trim();
+                if (!arg) {
+                    appendLines([
+                        { cls: 't-comment', text: '# usage: open [project]' },
+                        { cls: '', text:  '  ' + Object.keys(PROJECTS).filter(k => k !== 'gcm').join('   ') },
+                        { cls: '', text: '' },
+                    ]);
+                } else {
+                    const url = PROJECTS[arg];
+                    if (url) {
+                        window.open(url, '_blank');
+                        appendLines([{ cls: 't-comment', text: '# opening ' + arg + ' ↗' }, { cls: '', text: '' }]);
+                    } else {
+                        appendLines([
+                            { cls: 't-err', text: 'project not found: ' + escapeHtml(arg) },
+                            { cls: 't-comment', text: '# available: ' + Object.keys(PROJECTS).filter(k => k !== 'gcm').join(', ') },
+                            { cls: '', text: '' },
+                        ]);
+                    }
+                }
                 return;
             }
 
             const handler = COMMANDS[trimmed];
             if (handler) {
+                if (trimmed === 'surprise') awaitingAnotherKaomoji = true;
                 appendLines(handler());
             } else {
                 appendLines([
@@ -1134,11 +1221,53 @@
         }
 
         // Keyboard handler
+        const COMPLETABLE = () => Object.keys(COMMANDS).filter(k => k !== 'clear' && k !== 'surprise').concat(['open', 'clear', 'surprise']);
+
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const val = input.value;
                 input.value = '';
+                historyIdx = -1;
+                if (val.trim()) cmdHistory.push(val.trim());
                 runCommand(val);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (historyIdx < cmdHistory.length - 1) {
+                    historyIdx++;
+                    input.value = cmdHistory[cmdHistory.length - 1 - historyIdx];
+                    setTimeout(() => input.setSelectionRange(input.value.length, input.value.length), 0);
+                }
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (historyIdx > 0) {
+                    historyIdx--;
+                    input.value = cmdHistory[cmdHistory.length - 1 - historyIdx];
+                } else {
+                    historyIdx = -1;
+                    input.value = '';
+                }
+            } else if (e.key === 'Tab') {
+                e.preventDefault();
+                const partial = input.value.trim().toLowerCase();
+                if (!partial) return;
+                const isOpen = partial.startsWith('open ');
+                if (isOpen) {
+                    const arg = partial.slice(5);
+                    const projectKeys = Object.keys(PROJECTS);
+                    const matches = projectKeys.filter(k => k.startsWith(arg));
+                    if (matches.length === 1) input.value = 'open ' + matches[0];
+                    else if (matches.length > 1) {
+                        appendCommand(input.value);
+                        appendLines([{ cls: 't-muted', text: '  ' + matches.join('   ') }, { cls: '', text: '' }]);
+                    }
+                } else {
+                    const matches = COMPLETABLE().filter(c => c.startsWith(partial));
+                    if (matches.length === 1) input.value = matches[0];
+                    else if (matches.length > 1) {
+                        appendCommand(input.value);
+                        appendLines([{ cls: 't-muted', text: '  ' + matches.join('   ') }, { cls: '', text: '' }]);
+                    }
+                }
             }
         });
 
@@ -1160,7 +1289,7 @@
                     setTimeout(() => {
                         const fakeRow = document.getElementById('fake-intro-row');
                         if (fakeRow) fakeRow.remove();
-                        runCommand('help');
+                        if (!userHasInteracted) runCommand('help');
                     }, 200);
                 }
             }
@@ -1175,6 +1304,53 @@
         }
 
         typewriterIntro();
+
+        // ── Scroll progress bar ───────────────────────────────
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrolled = document.documentElement.scrollTop;
+            const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progressBar.style.width = (scrolled / total * 100) + '%';
+        }, { passive: true });
+
+        // ── Active nav on scroll ──────────────────────────────
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { threshold: 0.25 });
+        document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+
+        // ── GitHub activity ───────────────────────────────────
+        (async () => {
+            try {
+                const res = await fetch('https://api.github.com/users/CascadingDreams/events/public');
+                const events = await res.json();
+                const push = events.find(e => e.type === 'PushEvent');
+                if (!push) return;
+                const repoName = push.repo.name.replace('CascadingDreams/', '');
+                const repoUrl = 'https://github.com/' + push.repo.name;
+                document.getElementById('activity-repo').textContent = repoName;
+                document.getElementById('activity-repo').href = repoUrl;
+                const el = document.getElementById('hero-activity');
+                el.style.display = 'flex';
+            } catch (_) {}
+        })();
+
+        // ── Copy email ────────────────────────────────────────
+        function copyEmail(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText('contact@samanthahill.dev').then(() => {
+                const el = document.getElementById('copy-email-text');
+                el.textContent = 'copied! ✓';
+                setTimeout(() => el.textContent = 'contact@samanthahill.dev', 2000);
+            });
+        }
     </script>
 
 </body>
