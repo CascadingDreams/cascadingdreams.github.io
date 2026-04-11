@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samantha Hill — Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23111'/><text x='3' y='24' font-family='monospace' font-size='19' fill='%234d9bf5'>%3E_</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23111'/><text x='3' y='24' font-family='monospace' font-size='19' fill='%234d9bf5'>%3E_</text></svg>">
     <style>
         :root {
             --bg: #1b1b1b;
@@ -15,28 +18,36 @@
             --surface2: #2e2e2e;
             --border: #3d3d3d;
             --text: #f2f2f2;
-            --muted: rgba(255,255,255,0.5);
+            --muted: rgba(255, 255, 255, 0.5);
             --accent: #4d9bf5;
             --accent-hover: #2d85f0;
-            --accent-light: rgba(77,155,245,0.12);
+            --accent-light: rgba(77, 155, 245, 0.12);
             --dark-bg: #111111;
             --dark-surface: #1b1b1b;
             --dark-border: #3d3d3d;
             --dark-text: #ffffff;
-            --dark-muted: rgba(255,255,255,0.55);
+            --dark-muted: rgba(255, 255, 255, 0.55);
             --green: #3fb950;
-            --green-bg: rgba(63,185,80,0.15);
+            --green-bg: rgba(63, 185, 80, 0.15);
             --font: 'Inter', sans-serif;
             --mono: 'JetBrains Mono', 'Fira Code', monospace;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         /* ── Scroll progress bar ── */
         #scroll-progress {
             position: fixed;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
             height: 2px;
             width: 0%;
             background: var(--accent);
@@ -56,7 +67,9 @@
         /* ──────────────────────── NAV ──────────────────────── */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
             background: var(--dark-bg);
             border-bottom: 1px solid var(--dark-border);
@@ -115,7 +128,9 @@
             transition: background 0.15s;
         }
 
-        .nav-cta:hover { background: var(--accent-hover); }
+        .nav-cta:hover {
+            background: var(--accent-hover);
+        }
 
         /* ──────────────────────── HERO ──────────────────────── */
         .hero {
@@ -161,8 +176,15 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .hero-desc {
@@ -199,8 +221,15 @@
         }
 
         @keyframes actpulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.35; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.35;
+            }
         }
 
         .activity-repo {
@@ -208,7 +237,9 @@
             text-decoration: none;
         }
 
-        .activity-repo:hover { text-decoration: underline; }
+        .activity-repo:hover {
+            text-decoration: underline;
+        }
 
         .btn {
             font-size: 0.875rem;
@@ -227,7 +258,9 @@
             color: #fff;
         }
 
-        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
 
         .btn-ghost {
             background: transparent;
@@ -237,7 +270,7 @@
 
         .btn-ghost:hover {
             color: var(--dark-text);
-            border-color: rgba(255,255,255,0.4);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
 
@@ -247,7 +280,7 @@
             border: 1px solid var(--dark-border);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
         }
 
         .terminal-bar {
@@ -264,16 +297,25 @@
             height: 12px;
             border-radius: 50%;
         }
-        .t-dot.red { background: #ff5f57; }
-        .t-dot.yellow { background: #febc2e; }
-        .t-dot.green { background: #28c840; }
+
+        .t-dot.red {
+            background: #ff5f57;
+        }
+
+        .t-dot.yellow {
+            background: #febc2e;
+        }
+
+        .t-dot.green {
+            background: #28c840;
+        }
 
         .terminal-title {
             flex: 1;
             text-align: center;
             font-family: var(--mono);
             font-size: 0.72rem;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255, 255, 255, 0.4);
         }
 
         .terminal-body {
@@ -287,32 +329,84 @@
             color: #e6edf3;
         }
 
-        .terminal-body::-webkit-scrollbar { width: 4px; }
-        .terminal-body::-webkit-scrollbar-track { background: transparent; }
-        .terminal-body::-webkit-scrollbar-thumb { background: var(--dark-border); border-radius: 2px; }
+        .terminal-body::-webkit-scrollbar {
+            width: 4px;
+        }
 
-        .t-line { margin-bottom: 0; white-space: pre-wrap; word-break: break-word; }
-        .t-prompt { color: #7ee787; }
-        .t-cmd { color: #e6edf3; }
-        .t-comment { color: rgba(230,237,243,0.4); }
-        .t-muted { color: rgba(230,237,243,0.35); }
-        .t-key { color: #79c0ff; }
-        .t-val { color: #e6edf3; }
-        .t-tag { color: #7ee787; }
-        .t-link { color: #58a6ff; text-decoration: none; }
-        .t-link:hover { text-decoration: underline; }
-        .t-err { color: #f85149; }
-        .t-empty { height: 0.8rem; }
+        .terminal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: var(--dark-border);
+            border-radius: 2px;
+        }
+
+        .t-line {
+            margin-bottom: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .t-prompt {
+            color: #7ee787;
+        }
+
+        .t-cmd {
+            color: #e6edf3;
+        }
+
+        .t-comment {
+            color: rgba(230, 237, 243, 0.4);
+        }
+
+        .t-muted {
+            color: rgba(230, 237, 243, 0.35);
+        }
+
+        .t-key {
+            color: #79c0ff;
+        }
+
+        .t-val {
+            color: #e6edf3;
+        }
+
+        .t-tag {
+            color: #7ee787;
+        }
+
+        .t-link {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .t-link:hover {
+            text-decoration: underline;
+        }
+
+        .t-err {
+            color: #f85149;
+        }
+
+        .t-empty {
+            height: 0.8rem;
+        }
 
         .terminal-input-row {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1.25rem 0.75rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .terminal-input-row .t-prompt { font-family: var(--mono); font-size: 0.8rem; color: #7ee787; flex-shrink: 0; }
+        .terminal-input-row .t-prompt {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: #7ee787;
+            flex-shrink: 0;
+        }
 
         #terminal-input {
             flex: 1;
@@ -388,7 +482,7 @@
         .project-card:hover {
             border-color: var(--accent);
             background: var(--accent-light);
-            box-shadow: 0 4px 16px rgba(21,88,214,0.12);
+            box-shadow: 0 4px 16px rgba(21, 88, 214, 0.12);
         }
 
         .project-card-top {
@@ -448,7 +542,7 @@
 
         .project-card:hover .tag {
             background: var(--accent-light);
-            border-color: rgba(21,88,214,0.2);
+            border-color: rgba(21, 88, 214, 0.2);
         }
 
         /* ──────────────────────── SKILLS ──────────────────────── */
@@ -458,17 +552,34 @@
             gap: 1.5rem 2rem;
         }
 
-        .skills-grid .skill-group:nth-child(1) { grid-column: 1 / span 2; }
-        .skills-grid .skill-group:nth-child(2) { grid-column: 3 / span 2; }
-        .skills-grid .skill-group:nth-child(3) { grid-column: 5 / span 2; }
-        .skills-grid .skill-group:nth-child(4) { grid-column: 2 / span 2; }
-        .skills-grid .skill-group:nth-child(5) { grid-column: 4 / span 2; }
+        .skills-grid .skill-group:nth-child(1) {
+            grid-column: 1 / span 2;
+        }
+
+        .skills-grid .skill-group:nth-child(2) {
+            grid-column: 3 / span 2;
+        }
+
+        .skills-grid .skill-group:nth-child(3) {
+            grid-column: 5 / span 2;
+        }
+
+        .skills-grid .skill-group:nth-child(4) {
+            grid-column: 2 / span 2;
+        }
+
+        .skills-grid .skill-group:nth-child(5) {
+            grid-column: 4 / span 2;
+        }
 
         @media (max-width: 700px) {
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-            .skills-grid .skill-group:nth-child(n) { grid-column: 1; }
+
+            .skills-grid .skill-group:nth-child(n) {
+                grid-column: 1;
+            }
         }
 
 
@@ -509,8 +620,13 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .timeline-item:first-child { padding-top: 0; }
-        .timeline-item:last-child { border-bottom: none; }
+        .timeline-item:first-child {
+            padding-top: 0;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
 
         .timeline-date {
             font-family: var(--mono);
@@ -567,10 +683,13 @@
 
         .cert-card:hover {
             border-color: var(--accent);
-            box-shadow: 0 2px 12px rgba(21,88,214,0.1);
+            box-shadow: 0 2px 12px rgba(21, 88, 214, 0.1);
         }
 
-        .cert-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .cert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
 
         .cert-name {
             font-size: 0.9rem;
@@ -639,7 +758,9 @@
             border-radius: 4px;
         }
 
-        .btn-contact-primary:hover { background: var(--accent-hover); }
+        .btn-contact-primary:hover {
+            background: var(--accent-hover);
+        }
 
         .btn-contact-ghost {
             background: transparent;
@@ -650,7 +771,7 @@
 
         .btn-contact-ghost:hover {
             color: var(--dark-text);
-            border-color: rgba(255,255,255,0.4);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         /* ──────────────────────── FOOTER ──────────────────────── */
@@ -667,7 +788,7 @@
         footer p {
             font-family: var(--mono);
             font-size: 0.72rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255, 255, 255, 0.35);
             letter-spacing: 0.04em;
         }
 
@@ -684,7 +805,10 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .fade-in { opacity: 1; transform: none; }
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
         }
 
         /* ──────────────────────── MOBILE ──────────────────────── */
@@ -703,14 +827,27 @@
                 gap: 0.4rem;
             }
 
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+            }
         }
 
         @media (max-width: 600px) {
-            nav { padding: 0 1.25rem; }
-            .hero { padding: 5rem 1.25rem 3.5rem; }
-            .content-wrap { padding: 0 1.25rem; }
-            .contact-section { padding: 3.5rem 1.25rem; }
+            nav {
+                padding: 0 1.25rem;
+            }
+
+            .hero {
+                padding: 5rem 1.25rem 3.5rem;
+            }
+
+            .content-wrap {
+                padding: 0 1.25rem;
+            }
+
+            .contact-section {
+                padding: 3.5rem 1.25rem;
+            }
         }
     </style>
 </head>
@@ -737,7 +874,7 @@
             <div class="hero-text">
                 <p class="hero-eyebrow">Software Engineer · Melbourne, AU</p>
                 <h1 class="hero-heading">Samantha Hill<span class="cursor"> _</span></h1>
-                <p class="hero-desc">Full-stack software engineer with a foundation in Python, JavaScript, and SQL — backed by experience delivering in complex, multi-stakeholder environments.</p>
+                <p class="hero-desc">Software engineer. Curious by nature, generalist by choice — focused on the full journey from code to production and making it repeatable.</p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -760,7 +897,8 @@
                 <div class="terminal-body" id="terminal-output"></div>
                 <div class="terminal-input-row">
                     <span class="t-prompt">$</span>
-                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type a command...">
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false"
+                        placeholder="type a command...">
                 </div>
             </div>
         </div>
@@ -776,9 +914,21 @@
             </div>
 
             <div class="projects-grid fade-in">
-                <a href="https://github.com/CascadingDreams/aws-health-monitor" target="_blank" class="project-card">
+                <a href="https://github.com/CascadingDreams/kafka-notification-pipeline" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">01</span>
+                        <span style="display:flex;align-items:center;gap:0.5rem;"><span style="font-size:0.7rem;font-family:var(--mono);background:rgba(77,155,245,0.15);color:var(--accent);border:1px solid rgba(77,155,245,0.3);padding:2px 7px;border-radius:3px;letter-spacing:0.03em;">WIP</span><span class="project-arrow">↗</span></span>
+                    </div>
+                    <h3 class="project-name">Kafka Notification Pipeline</h3>
+                    <p class="project-desc">Event-driven pipeline inspired by financial services infrastructure — Flask producer emits Avro-encoded events to Apache Kafka, Python consumer processes and persists to PostgreSQL, React dashboard visualises live event throughput.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Apache Kafka</span><span class="tag">PostgreSQL</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Docker</span><span class="tag">Avro</span><span class="tag">GitHub Actions</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/CascadingDreams/aws-health-monitor" target="_blank" class="project-card">
+                    <div class="project-card-top">
+                        <span class="project-num">02</span>
                         <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">AWS Health Monitor</h3>
@@ -790,7 +940,7 @@
 
                 <a href="https://github.com/CascadingDreams/Simple-tv-and-movie-tracker" target="_blank" class="project-card">
                     <div class="project-card-top">
-                        <span class="project-num">02</span>
+                        <span class="project-num">03</span>
                         <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">StreamTracker</h3>
@@ -802,7 +952,7 @@
 
                 <a href="https://github.com/CascadingDreams/vic-home-calculator" target="_blank" class="project-card">
                     <div class="project-card-top">
-                        <span class="project-num">03</span>
+                        <span class="project-num">04</span>
                         <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">Victorian Mortgage Calculator</h3>
@@ -814,7 +964,7 @@
 
                 <a href="https://github.com/CascadingDreams/gcm-tool" target="_blank" class="project-card">
                     <div class="project-card-top">
-                        <span class="project-num">04</span>
+                        <span class="project-num">05</span>
                         <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">gcm — AI Commit Messages</h3>
@@ -826,7 +976,7 @@
 
                 <a href="https://github.com/CascadingDreams/simple-custom-shell" target="_blank" class="project-card">
                     <div class="project-card-top">
-                        <span class="project-num">05</span>
+                        <span class="project-num">06</span>
                         <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">Unix Shell in C</h3>
@@ -853,54 +1003,113 @@
                     <div class="skill-group">
                         <p class="skill-group-title">Languages</p>
                         <div class="skill-pills">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Python-4d9bf5?style=flat-square&logo=python&logoColor=fff" alt="Python">
-                            <img class="skill-badge" src="https://img.shields.io/badge/JavaScript-4d9bf5?style=flat-square&logo=javascript&logoColor=fff" alt="JavaScript">
-                            <img class="skill-badge" src="https://img.shields.io/badge/C-4d9bf5?style=flat-square&logo=c&logoColor=fff" alt="C">
-                            <img class="skill-badge" src="https://img.shields.io/badge/SQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff" alt="SQL">
-                            <img class="skill-badge" src="https://img.shields.io/badge/HTML5-4d9bf5?style=flat-square&logo=html5&logoColor=fff" alt="HTML5">
-                            <img class="skill-badge" src="https://img.shields.io/badge/CSS3-4d9bf5?style=flat-square&logo=css3&logoColor=fff" alt="CSS3">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Bash-4d9bf5?style=flat-square&logo=gnubash&logoColor=fff" alt="Bash">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Python-4d9bf5?style=flat-square&logo=python&logoColor=fff"
+                                alt="Python">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/JavaScript-4d9bf5?style=flat-square&logo=javascript&logoColor=fff"
+                                alt="JavaScript">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/C-4d9bf5?style=flat-square&logo=c&logoColor=fff"
+                                alt="C">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/SQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff"
+                                alt="SQL">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/HTML5-4d9bf5?style=flat-square&logo=html5&logoColor=fff"
+                                alt="HTML5">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/CSS3-4d9bf5?style=flat-square&logo=css3&logoColor=fff"
+                                alt="CSS3">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Bash-4d9bf5?style=flat-square&logo=gnubash&logoColor=fff"
+                                alt="Bash">
                         </div>
                     </div>
                     <div class="skill-group">
                         <p class="skill-group-title">Frameworks, Libraries & Tools</p>
                         <div class="skill-pills">
-                            <img class="skill-badge" src="https://img.shields.io/badge/React-4d9bf5?style=flat-square&logo=react&logoColor=fff" alt="React">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Flask-4d9bf5?style=flat-square&logo=flask&logoColor=fff" alt="Flask">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Express-4d9bf5?style=flat-square&logo=express&logoColor=fff" alt="Express">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Node.js-4d9bf5?style=flat-square&logo=node.js&logoColor=fff" alt="Node.js">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Vite-4d9bf5?style=flat-square&logo=vite&logoColor=fff" alt="Vite">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Vitest-4d9bf5?style=flat-square&logo=vitest&logoColor=fff" alt="Vitest">
-                            <img class="skill-badge" src="https://img.shields.io/badge/SQLAlchemy-4d9bf5?style=flat-square&logo=python&logoColor=fff" alt="SQLAlchemy">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Postman-4d9bf5?style=flat-square&logo=postman&logoColor=fff" alt="Postman">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/React-4d9bf5?style=flat-square&logo=react&logoColor=fff"
+                                alt="React">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Flask-4d9bf5?style=flat-square&logo=flask&logoColor=fff"
+                                alt="Flask">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Express-4d9bf5?style=flat-square&logo=express&logoColor=fff"
+                                alt="Express">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Node.js-4d9bf5?style=flat-square&logo=node.js&logoColor=fff"
+                                alt="Node.js">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Vite-4d9bf5?style=flat-square&logo=vite&logoColor=fff"
+                                alt="Vite">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Vitest-4d9bf5?style=flat-square&logo=vitest&logoColor=fff"
+                                alt="Vitest">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Postman-4d9bf5?style=flat-square&logo=postman&logoColor=fff"
+                                alt="Postman">
                         </div>
                     </div>
                     <div class="skill-group">
-                        <p class="skill-group-title">Data & BI</p>
+                        <p class="skill-group-title">Data, Databases & BI</p>
                         <div class="skill-pills">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Power_BI-4d9bf5?style=flat-square&logo=powerbi&logoColor=fff" alt="Power BI">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Google_Analytics-4d9bf5?style=flat-square&logo=googleanalytics&logoColor=fff" alt="Google Analytics">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Looker_Studio-4d9bf5?style=flat-square&logo=looker&logoColor=fff" alt="Looker Studio">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/PostgreSQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff"
+                                alt="PostgreSQL">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/SQLAlchemy-4d9bf5?style=flat-square&logo=python&logoColor=fff"
+                                alt="SQLAlchemy">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Apache_Kafka-4d9bf5?style=flat-square&logo=apachekafka&logoColor=fff"
+                                alt="Apache Kafka">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Power_BI-4d9bf5?style=flat-square&logo=powerbi&logoColor=fff"
+                                alt="Power BI">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Google_Analytics-4d9bf5?style=flat-square&logo=googleanalytics&logoColor=fff"
+                                alt="Google Analytics">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Looker_Studio-4d9bf5?style=flat-square&logo=looker&logoColor=fff"
+                                alt="Looker Studio">
                         </div>
                     </div>
                     <div class="skill-group">
                         <p class="skill-group-title">Cloud & DevOps</p>
                         <div class="skill-pills">
-                            <img class="skill-badge" src="https://img.shields.io/badge/AWS-4d9bf5?style=flat-square&logo=amazonaws&logoColor=fff" alt="AWS">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Azure-4d9bf5?style=flat-square&logo=microsoftazure&logoColor=fff" alt="Azure">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Terraform-4d9bf5?style=flat-square&logo=terraform&logoColor=fff" alt="Terraform">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Docker-4d9bf5?style=flat-square&logo=docker&logoColor=fff" alt="Docker">
-                            <img class="skill-badge" src="https://img.shields.io/badge/PostgreSQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff" alt="PostgreSQL">
-                            <img class="skill-badge" src="https://img.shields.io/badge/GitHub_Actions-4d9bf5?style=flat-square&logo=githubactions&logoColor=fff" alt="GitHub Actions">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Git-4d9bf5?style=flat-square&logo=git&logoColor=fff" alt="Git">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Linux-4d9bf5?style=flat-square&logo=linux&logoColor=fff" alt="Linux">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/AWS-4d9bf5?style=flat-square&logo=amazonaws&logoColor=fff"
+                                alt="AWS">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Azure-4d9bf5?style=flat-square&logo=microsoftazure&logoColor=fff"
+                                alt="Azure">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Terraform-4d9bf5?style=flat-square&logo=terraform&logoColor=fff"
+                                alt="Terraform">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Docker-4d9bf5?style=flat-square&logo=docker&logoColor=fff"
+                                alt="Docker">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/GitHub_Actions-4d9bf5?style=flat-square&logo=githubactions&logoColor=fff"
+                                alt="GitHub Actions">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Git-4d9bf5?style=flat-square&logo=git&logoColor=fff"
+                                alt="Git">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Linux-4d9bf5?style=flat-square&logo=linux&logoColor=fff"
+                                alt="Linux">
                         </div>
                     </div>
                     <div class="skill-group">
                         <p class="skill-group-title">Collaboration</p>
                         <div class="skill-pills">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Confluence-4d9bf5?style=flat-square&logo=confluence&logoColor=fff" alt="Confluence">
-                            <img class="skill-badge" src="https://img.shields.io/badge/Jira-4d9bf5?style=flat-square&logo=jira&logoColor=fff" alt="Jira">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Confluence-4d9bf5?style=flat-square&logo=confluence&logoColor=fff"
+                                alt="Confluence">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Jira-4d9bf5?style=flat-square&logo=jira&logoColor=fff"
+                                alt="Jira">
                         </div>
                     </div>
                 </div>
@@ -926,7 +1135,8 @@
                         <div class="timeline-body">
                             <ul>
                                 <li>Architecture and cloud solution design aligned to Defence security baselines</li>
-                                <li>Power BI dashboard development — visuals, DAX calculated fields, performance monitoring</li>
+                                <li>Power BI dashboard development — visuals, DAX calculated fields, performance
+                                    monitoring</li>
                                 <li>Technical documentation across Confluence and Microsoft Teams</li>
                                 <li>Stakeholder coordination for high-priority mitigation strategies</li>
                             </ul>
@@ -940,9 +1150,11 @@
                         <p class="timeline-company">Jumbo Interactive — Brisbane</p>
                         <div class="timeline-body">
                             <ul>
-                                <li>Analytics strategy across four brands in three countries using Google Analytics and Looker Studio</li>
+                                <li>Analytics strategy across four brands in three countries using Google Analytics and
+                                    Looker Studio</li>
                                 <li>Built and maintained customer-facing web pages with HTML/CSS</li>
-                                <li>Cross-functional collaboration with developers, product managers, and external agencies</li>
+                                <li>Cross-functional collaboration with developers, product managers, and external
+                                    agencies</li>
                             </ul>
                         </div>
                     </div>
@@ -966,7 +1178,8 @@
                         <p class="timeline-role">Software Engineering Program</p>
                         <p class="timeline-company">Holberton School</p>
                         <div class="timeline-body">
-                            Project-based full-stack curriculum — algorithms, C, Python, JavaScript, databases, and systems programming.
+                            Project-based full-stack curriculum — algorithms, C, Python, JavaScript, databases, and
+                            systems programming.
                         </div>
                     </div>
                 </div>
@@ -1014,11 +1227,14 @@
         <div class="contact-inner">
             <p class="section-eyebrow fade-in">Let's Talk</p>
             <h2 class="section-title fade-in">Get in Touch</h2>
-            <p class="contact-desc fade-in">Open to full-stack engineering roles in Melbourne. Holds an NV1 security clearance.</p>
+            <p class="contact-desc fade-in">Open to full-stack engineering roles in Melbourne. Holds an NV1 security
+                clearance.</p>
             <div class="contact-links fade-in">
-                <a href="mailto:contact@samanthahill.dev" class="btn btn-contact-primary" id="copy-email-btn" onclick="copyEmail(event)"><span id="copy-email-text">contact@samanthahill.dev</span></a>
+                <a href="mailto:contact@samanthahill.dev" class="btn btn-contact-primary" id="copy-email-btn"
+                    onclick="copyEmail(event)"><span id="copy-email-text">contact@samanthahill.dev</span></a>
                 <a href="https://github.com/CascadingDreams" target="_blank" class="btn btn-contact-ghost">GitHub</a>
-                <a href="https://www.linkedin.com/in/sammy-hill-173078142/" target="_blank" class="btn btn-contact-ghost">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/sammy-hill-173078142/" target="_blank"
+                    class="btn btn-contact-ghost">LinkedIn</a>
             </div>
         </div>
     </section>
@@ -1069,6 +1285,7 @@
             ls: () => [
                 { cls: 't-comment', text: '# projects/' },
                 { cls: '', text: '' },
+                { cls: 't-tag', text: '  kafka-notification-pipeline/  [WIP]' },
                 { cls: 't-tag', text: '  aws-health-monitor/' },
                 { cls: 't-tag', text: '  streamtracker/' },
                 { cls: 't-tag', text: '  vic-mortgage-calculator/' },
@@ -1082,9 +1299,9 @@
                 { cls: 't-comment', text: '# tech stack' },
                 { cls: '', text: '' },
                 { cls: '', text: '  <span class="t-key">Languages</span>   Python, JavaScript, C, SQL, HTML5, CSS3, Bash' },
-                { cls: '', text: '  <span class="t-key">Frameworks</span>  React, Flask, Express, Node.js, Vite, Vitest, SQLAlchemy, Postman' },
-                { cls: '', text: '  <span class="t-key">Data</span>        Power BI, Google Analytics, Looker Studio' },
-                { cls: '', text: '  <span class="t-key">Cloud</span>       AWS, Azure, Terraform, Docker, PostgreSQL, GitHub Actions, Git, Linux' },
+                { cls: '', text: '  <span class="t-key">Frameworks</span>  React, Flask, Express, Node.js, Vite, Vitest, Postman' },
+                { cls: '', text: '  <span class="t-key">Data</span>        PostgreSQL, SQLAlchemy, Apache Kafka, Power BI, Google Analytics, Looker Studio' },
+                { cls: '', text: '  <span class="t-key">Cloud</span>       AWS, Azure, Terraform, Docker, GitHub Actions, Git, Linux' },
                 { cls: '', text: '  <span class="t-key">Collab</span>      Confluence, Jira' },
                 { cls: '', text: '' },
             ],
@@ -1145,12 +1362,14 @@
         }
 
         const PROJECTS = {
-            'aws-health-monitor':      'https://github.com/CascadingDreams/aws-health-monitor',
-            'streamtracker':           'https://github.com/CascadingDreams/Simple-tv-and-movie-tracker',
+            'kafka-notification-pipeline': 'https://github.com/CascadingDreams/kafka-notification-pipeline',
+            'kafka': 'https://github.com/CascadingDreams/kafka-notification-pipeline',
+            'aws-health-monitor': 'https://github.com/CascadingDreams/aws-health-monitor',
+            'streamtracker': 'https://github.com/CascadingDreams/Simple-tv-and-movie-tracker',
             'vic-mortgage-calculator': 'https://github.com/CascadingDreams/vic-home-calculator',
-            'gcm-tool':                'https://github.com/CascadingDreams/gcm-tool',
-            'gcm':                     'https://github.com/CascadingDreams/gcm-tool',
-            'simple-shell':            'https://github.com/CascadingDreams/simple-custom-shell',
+            'gcm-tool': 'https://github.com/CascadingDreams/gcm-tool',
+            'gcm': 'https://github.com/CascadingDreams/gcm-tool',
+            'simple-shell': 'https://github.com/CascadingDreams/simple-custom-shell',
         };
 
         function runCommand(cmd) {
@@ -1188,7 +1407,7 @@
                 if (!arg) {
                     appendLines([
                         { cls: 't-comment', text: '# usage: open [project]' },
-                        { cls: '', text:  '  ' + Object.keys(PROJECTS).filter(k => k !== 'gcm').join('   ') },
+                        { cls: '', text: '  ' + Object.keys(PROJECTS).filter(k => k !== 'gcm').join('   ') },
                         { cls: '', text: '' },
                     ]);
                 } else {
@@ -1326,22 +1545,6 @@
         }, { threshold: 0.25 });
         document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
-        // ── GitHub activity ───────────────────────────────────
-        (async () => {
-            try {
-                const res = await fetch('https://api.github.com/users/CascadingDreams/events/public');
-                const events = await res.json();
-                const push = events.find(e => e.type === 'PushEvent');
-                if (!push) return;
-                const repoName = push.repo.name.replace('CascadingDreams/', '');
-                const repoUrl = 'https://github.com/' + push.repo.name;
-                document.getElementById('activity-repo').textContent = repoName;
-                document.getElementById('activity-repo').href = repoUrl;
-                const el = document.getElementById('hero-activity');
-                el.style.display = 'flex';
-            } catch (_) {}
-        })();
-
         // ── Copy email ────────────────────────────────────────
         function copyEmail(e) {
             e.preventDefault();
@@ -1353,5 +1556,26 @@
         }
     </script>
 
+    <script>
+        // ── GitHub activity ───────────────────────────────────
+        (async () => {
+            try {
+                const res = await fetch('https://api.github.com/users/CascadingDreams/events/public');
+                if (!res.ok) return;
+                const events = await res.json();
+                const push = events.find(e => e.type === 'PushEvent');
+                if (!push) return;
+                const repoName = push.repo.name.replace('CascadingDreams/', '');
+                const repoUrl = 'https://github.com/' + push.repo.name;
+                document.getElementById('activity-repo').textContent = repoName;
+                document.getElementById('activity-repo').href = repoUrl;
+                document.getElementById('hero-activity').style.display = 'flex';
+            } catch (e) {
+                console.error('GitHub activity fetch failed:', e);
+            }
+        })();
+    </script>
+
 </body>
+
 </html>
