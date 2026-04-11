@@ -4,7 +4,7 @@
 
 My personal portfolio site — built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step, no dependencies. Hosted on GitHub Pages.
 
-![Portfolio screenshot](docs/portfolio%20image.png)
+![Portfolio screenshot](docs/portfolio.png)
 
 ---
 
