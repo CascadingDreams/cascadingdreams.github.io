@@ -499,18 +499,7 @@
             letter-spacing: 0.04em;
         }
 
-        .project-arrow {
-            color: var(--border);
-            font-size: 1rem;
-            transition: color 0.15s, transform 0.15s;
-        }
-
-        .project-card:hover .project-arrow {
-            color: var(--accent);
-            transform: translate(2px, -2px);
-        }
-
-        .project-name {
+.project-name {
             font-size: 1rem;
             font-weight: 600;
             color: var(--text);
@@ -575,11 +564,6 @@
             border-color: rgba(63, 185, 80, 0.4);
             background: var(--surface);
             box-shadow: none;
-        }
-
-        .project-card:has(.project-live:hover) .project-arrow {
-            color: var(--border);
-            transform: none;
         }
 
         .project-card:has(.project-live:hover) .tag {
@@ -959,7 +943,7 @@
                 <a href="https://github.com/CascadingDreams/kafka-notification-pipeline" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">01</span>
-                        <span style="display:flex;align-items:center;gap:0.5rem;"><span style="font-size:0.7rem;font-family:var(--mono);background:rgba(77,155,245,0.15);color:var(--accent);border:1px solid rgba(77,155,245,0.3);padding:2px 7px;border-radius:3px;letter-spacing:0.03em;">WIP</span><span class="project-arrow">↗</span></span>
+                        <span style="font-size:0.7rem;font-family:var(--mono);background:rgba(77,155,245,0.15);color:var(--accent);border:1px solid rgba(77,155,245,0.3);padding:2px 7px;border-radius:3px;letter-spacing:0.03em;">WIP</span>
                     </div>
                     <h3 class="project-name">Kafka Notification Pipeline</h3>
                     <p class="project-desc">Event-driven pipeline inspired by financial services infrastructure — Hono producer validates requests with Zod and serialises events as Avro to Apache Kafka via Confluent Schema Registry, consumer processes and persists to PostgreSQL, React dashboard visualises live event throughput.</p>
@@ -971,7 +955,6 @@
                 <a href="https://github.com/CascadingDreams/aws-health-monitor" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">02</span>
-                        <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">AWS Health Monitor</h3>
                     <p class="project-desc">Serverless AWS infrastructure health monitor — Lambda checks S3 availability, publishes custom CloudWatch metrics, and sends SNS email alerts when unhealthy. All provisioned with Terraform.</p>
@@ -983,31 +966,30 @@
                 <a href="https://github.com/CascadingDreams/Simple-tv-and-movie-tracker" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">03</span>
-                        <span style="display:flex;align-items:center;gap:0.5rem;"><span class="project-live" onclick="event.preventDefault();event.stopPropagation();window.open('https://stream-tracker-sh.vercel.app/','_blank')">View it live</span><span class="project-arrow">↗</span></span>
                     </div>
                     <h3 class="project-name">StreamTracker</h3>
                     <p class="project-desc">Full-stack TV and movie tracking app with JWT auth, RESTful API, watchlist and ratings. Dockerised with Nginx and PostgreSQL persistence.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span>
                     </div>
+                    <span class="project-live" onclick="event.preventDefault();event.stopPropagation();window.open('https://stream-tracker-sh.vercel.app/','_blank')">View it live</span>
                 </a>
 
                 <a href="https://github.com/CascadingDreams/vic-home-calculator" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">04</span>
-                        <span style="display:flex;align-items:center;gap:0.5rem;"><span class="project-live" onclick="event.preventDefault();event.stopPropagation();window.open('https://vic-home-calculator.vercel.app/','_blank')">View it live</span><span class="project-arrow">↗</span></span>
                     </div>
                     <h3 class="project-name">Victorian Mortgage Calculator</h3>
                     <p class="project-desc">Interactive calculator for Victorian first home buyers — stamp duty brackets, FHOG eligibility, and repayments. Full Vitest coverage with CI pipeline.</p>
                     <div class="project-tags">
                         <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Vitest</span><span class="tag">GitHub Actions</span>
                     </div>
+                    <span class="project-live" onclick="event.preventDefault();event.stopPropagation();window.open('https://vic-home-calculator.vercel.app/','_blank')">View it live</span>
                 </a>
 
                 <a href="https://github.com/CascadingDreams/gcm-tool" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">05</span>
-                        <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">gcm — AI Commit Messages</h3>
                     <p class="project-desc">Python CLI that reads staged git diffs and generates conventional commit messages via the Anthropic API. Installable via pip.</p>
@@ -1019,7 +1001,6 @@
                 <a href="https://github.com/CascadingDreams/simple-custom-shell" target="_blank" class="project-card">
                     <div class="project-card-top">
                         <span class="project-num">06</span>
-                        <span class="project-arrow">↗</span>
                     </div>
                     <h3 class="project-name">Unix Shell in C</h3>
                     <p class="project-desc">POSIX-compliant shell built from scratch — command parsing, process forking, PATH resolution, and memory management.</p>
