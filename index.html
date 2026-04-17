@@ -476,6 +476,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+            overflow: hidden;
             transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
         }
 
@@ -546,25 +547,32 @@
         }
 
         .project-live {
-            font-size: 0.7rem;
-            font-family: var(--mono);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: auto;
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+            margin-bottom: -1.5rem;
+            padding: 0.7rem 1rem;
             background: var(--green-bg);
             color: var(--green);
-            border: 1px solid rgba(63, 185, 80, 0.5);
-            padding: 2px 7px;
-            border-radius: 3px;
-            letter-spacing: 0.03em;
+            border-top: 1px solid rgba(63, 185, 80, 0.25);
+            font-size: 0.73rem;
+            font-family: var(--mono);
+            letter-spacing: 0.05em;
             cursor: pointer;
-            transition: background 0.15s, box-shadow 0.15s;
+            transition: background 0.15s, color 0.15s;
         }
 
         .project-live:hover {
             background: rgba(63, 185, 80, 0.28);
-            box-shadow: 0 0 0 2px rgba(63, 185, 80, 0.2);
+            color: #5fd470;
         }
 
         .project-card:has(.project-live:hover) {
-            border-color: var(--border);
+            border-color: rgba(63, 185, 80, 0.4);
             background: var(--surface);
             box-shadow: none;
         }
@@ -1050,12 +1058,6 @@
                                 src="https://img.shields.io/badge/SQL-4d9bf5?style=flat-square&logo=postgresql&logoColor=fff"
                                 alt="SQL">
                             <img class="skill-badge"
-                                src="https://img.shields.io/badge/HTML5-4d9bf5?style=flat-square&logo=html5&logoColor=fff"
-                                alt="HTML5">
-                            <img class="skill-badge"
-                                src="https://img.shields.io/badge/CSS3-4d9bf5?style=flat-square&logo=css3&logoColor=fff"
-                                alt="CSS3">
-                            <img class="skill-badge"
                                 src="https://img.shields.io/badge/Bash-4d9bf5?style=flat-square&logo=gnubash&logoColor=fff"
                                 alt="Bash">
                         </div>
@@ -1082,6 +1084,12 @@
                                 src="https://img.shields.io/badge/Vitest-4d9bf5?style=flat-square&logo=vitest&logoColor=fff"
                                 alt="Vitest">
                             <img class="skill-badge"
+                                src="https://img.shields.io/badge/Hono-4d9bf5?style=flat-square&logo=hono&logoColor=fff"
+                                alt="Hono">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Zod-4d9bf5?style=flat-square&logo=zod&logoColor=fff"
+                                alt="Zod">
+                            <img class="skill-badge"
                                 src="https://img.shields.io/badge/Postman-4d9bf5?style=flat-square&logo=postman&logoColor=fff"
                                 alt="Postman">
                         </div>
@@ -1099,14 +1107,11 @@
                                 src="https://img.shields.io/badge/Apache_Kafka-4d9bf5?style=flat-square&logo=apachekafka&logoColor=fff"
                                 alt="Apache Kafka">
                             <img class="skill-badge"
+                                src="https://img.shields.io/badge/Avro-4d9bf5?style=flat-square&logo=apachekafka&logoColor=fff"
+                                alt="Avro">
+                            <img class="skill-badge"
                                 src="https://img.shields.io/badge/Power_BI-4d9bf5?style=flat-square&logo=powerbi&logoColor=fff"
                                 alt="Power BI">
-                            <img class="skill-badge"
-                                src="https://img.shields.io/badge/Google_Analytics-4d9bf5?style=flat-square&logo=googleanalytics&logoColor=fff"
-                                alt="Google Analytics">
-                            <img class="skill-badge"
-                                src="https://img.shields.io/badge/Looker_Studio-4d9bf5?style=flat-square&logo=looker&logoColor=fff"
-                                alt="Looker Studio">
                         </div>
                     </div>
                     <div class="skill-group">
@@ -1124,6 +1129,15 @@
                             <img class="skill-badge"
                                 src="https://img.shields.io/badge/Docker-4d9bf5?style=flat-square&logo=docker&logoColor=fff"
                                 alt="Docker">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Red_Hat-4d9bf5?style=flat-square&logo=redhat&logoColor=fff"
+                                alt="Red Hat">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Podman-4d9bf5?style=flat-square&logo=podman&logoColor=fff"
+                                alt="Podman">
+                            <img class="skill-badge"
+                                src="https://img.shields.io/badge/Kubernetes-4d9bf5?style=flat-square&logo=kubernetes&logoColor=fff"
+                                alt="Kubernetes">
                             <img class="skill-badge"
                                 src="https://img.shields.io/badge/GitHub_Actions-4d9bf5?style=flat-square&logo=githubactions&logoColor=fff"
                                 alt="GitHub Actions">
@@ -1165,14 +1179,14 @@
                     <div class="timeline-date">Nov 2025 – Present</div>
                     <div>
                         <p class="timeline-role">ICT Engineer</p>
-                        <p class="timeline-company">Australian Government — Melbourne</p>
+                        <p class="timeline-company">Defence Australia — Melbourne <span style="font-weight:400; opacity:0.7;">(non-ongoing APS)</span></p>
                         <div class="timeline-body">
                             <ul>
-                                <li>Architecture and cloud solution design aligned to Defence security baselines</li>
-                                <li>Power BI dashboard development — visuals, DAX calculated fields, performance
-                                    monitoring</li>
-                                <li>Technical documentation across Confluence and Microsoft Teams</li>
-                                <li>Stakeholder coordination for high-priority mitigation strategies</li>
+                                <li>Build and test containerised infrastructure using Podman and Buildah on Red Hat UBI9, validating deployment patterns locally before production implementation.</li>
+                                <li>Design container networking and initialisation sequences that mirror Kubernetes architecture, supporting a longer-term migration to a Kubernetes-native deployment.</li>
+                                <li>Maintain and enhance Power BI dashboards — monitoring performance, implementing user-requested updates to visuals and calculated fields.</li>
+                                <li>Coordinate with internal and external stakeholders to implement mitigation strategies for high-priority items.</li>
+                                <li>Produce technical documentation and contribute to knowledge sharing across project teams using Confluence and SharePoint.</li>
                             </ul>
                         </div>
                     </div>
@@ -1184,11 +1198,10 @@
                         <p class="timeline-company">Jumbo Interactive — Brisbane</p>
                         <div class="timeline-body">
                             <ul>
-                                <li>Analytics strategy across four brands in three countries using Google Analytics and
-                                    Looker Studio</li>
-                                <li>Built and maintained customer-facing web pages with HTML/CSS</li>
-                                <li>Cross-functional collaboration with developers, product managers, and external
-                                    agencies</li>
+                                <li>Planned and executed overarching content and analytics strategy across four brands in three countries, requiring strong prioritisation and stakeholder alignment under shifting requirements.</li>
+                                <li>Built and maintained customer-facing web pages using HTML and CSS; applied SEO best practices and implemented data-driven improvements informed by analytics reporting.</li>
+                                <li>Produced analytical reporting across all digital channels using DashThis and Google Analytics, providing recommendations to senior stakeholders.</li>
+                                <li>Collaborated with cross-functional teams including developers and product managers on delivery.</li>
                             </ul>
                         </div>
                     </div>
@@ -1332,10 +1345,10 @@
             skills: () => [
                 { cls: 't-comment', text: '# tech stack' },
                 { cls: '', text: '' },
-                { cls: '', text: '  <span class="t-key">Languages</span>   Python, TypeScript, C, SQL, HTML5, CSS3, Bash' },
-                { cls: '', text: '  <span class="t-key">Frameworks</span>  React, Flask, Express, Node.js, Vite, Vitest, Postman' },
-                { cls: '', text: '  <span class="t-key">Data</span>        PostgreSQL, SQLAlchemy, Apache Kafka, Power BI, Google Analytics, Looker Studio' },
-                { cls: '', text: '  <span class="t-key">Cloud</span>       AWS, Azure, Terraform, Docker, GitHub Actions, Git, Linux' },
+                { cls: '', text: '  <span class="t-key">Languages</span>   Python, TypeScript, C, SQL, Bash' },
+                { cls: '', text: '  <span class="t-key">Frameworks</span>  React, Flask, Express, Node.js, Hono, Zod, Vite, Vitest, Postman' },
+                { cls: '', text: '  <span class="t-key">Data</span>        PostgreSQL, SQLAlchemy, Apache Kafka, Avro, Power BI' },
+                { cls: '', text: '  <span class="t-key">Cloud</span>       AWS, Azure, Terraform, Docker, Podman, Kubernetes, Red Hat, GitHub Actions, Git, Linux' },
                 { cls: '', text: '  <span class="t-key">Collab</span>      Confluence, Jira' },
                 { cls: '', text: '' },
             ],
