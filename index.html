@@ -818,6 +818,49 @@
             letter-spacing: 0.04em;
         }
 
+        /* ──────────────────────── PETS BANNER ──────────────────────── */
+        .pets-banner {
+            background: var(--dark-bg);
+            border-top: 1px solid var(--dark-border);
+            padding: 3rem 2rem;
+        }
+
+        .pets-banner figure {
+            margin: 0 auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            transform: translateY(0);
+        }
+
+        .pets-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .pets-banner figcaption {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 1.25rem;
+            padding: 0.4rem 0.85rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 4px;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.04em;
+        }
+
+        @media (max-width: 600px) {
+            .pets-banner {
+                padding: 0 1.25rem;
+            }
+        }
+
         /* ──────────────────────── FADE-IN ──────────────────────── */
         .fade-in {
             opacity: 0;
@@ -1270,6 +1313,14 @@
             </div>
         </div>
     </section>
+
+    <!-- PETS BANNER -->
+    <div class="pets-banner">
+        <figure>
+            <img src="docs/Petal%20and%20freya.jpg" alt="Petal and Freya">
+            <figcaption>Petal &amp; Freya — the real engineers behind the scenes 🐾</figcaption>
+        </figure>
+    </div>
 
     <!-- FOOTER -->
     <footer>
